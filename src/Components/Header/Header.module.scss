@@ -1,0 +1,25 @@
+header {
+  height: 6rem;
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6rem;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 100;
+    background-color: var(--primary);
+    .app_logo {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 var(--padding);
+      h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--text);
+      }
+    }
+  }
+}
