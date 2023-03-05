@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const defaultTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+
 const initialState = {
     currentTheme: defaultTheme
 }
@@ -11,7 +12,7 @@ const themeSlice = createSlice({
     reducers: {
         setCurrentTheme: (state, action) => {
             state.currentTheme = action.payload;
-            console.log(action.payload);
+            // console.log(action.payload);
         }
     }
 });

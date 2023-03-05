@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentCat } from '../../redux/catReducer';
 import styles from './List.module.scss';
 
-const ListItem = ({ catDetails }) => {
+const ListItem = ({ catDetails, setShow }) => {
     const { currentCat } = useSelector(state => state.catReducer);
     const [active, setActive] = useState(Boolean)
     const dispatch = useDispatch();
@@ -17,7 +17,8 @@ const ListItem = ({ catDetails }) => {
     }, [currentCat, catDetails]);
 
     const handleClick = () => {
-        dispatch(setCurrentCat(catDetails))
+        dispatch(setCurrentCat(catDetails));
+        setShow(false)
     }
 
     return (
@@ -30,7 +31,7 @@ const ListItem = ({ catDetails }) => {
     )
 }
 
-const List = () => {
+const List = ({ setShow }) => {
     const { catList } = useSelector(state => state.catReducer);
     return (
         <div className={styles.cat_list}>
@@ -39,6 +40,7 @@ const List = () => {
                     <ListItem
                         id={ele.id}
                         catDetails={ele}
+                        setShow={setShow}
                     />
                 ))
             }

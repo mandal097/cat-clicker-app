@@ -26,7 +26,6 @@
   --btnText: #fff;
   --headertxt: #fff;
   --padding: 6rem;
-
 }
 
 * {
@@ -48,4 +47,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@media screen and (max-width: 850px) {
+  :root {
+    --padding: 1rem;
+  }
+  [data-theme="light"] {
+    --padding: 1rem;
+  }
 }
