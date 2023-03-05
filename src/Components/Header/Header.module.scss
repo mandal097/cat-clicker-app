@@ -8,17 +8,66 @@ header {
     height: 6rem;
     border-bottom: 1px solid var(--border-color);
     z-index: 100;
-    background-color: var(--primary);
+    background-color: var(--headerBg);
+    padding: 0 var(--padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     .app_logo {
       height: 100%;
       display: flex;
       align-items: center;
-      padding: 0 var(--padding);
       h1 {
         font-size: 1.8rem;
         font-weight: 700;
         text-transform: uppercase;
-        color: var(--text);
+        color: var(--headertxt);
+      }
+    }
+    .tools {
+      height: 3rem;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      .theme_controller {
+        width: fit-content;
+        height: 100%;
+        border: none;
+        border-radius: 10rem;
+        display: flex;
+        overflow: hidden;
+        .left_btn,
+        .right_btn {
+          color: var(--headertxt);
+          background-color: rgb(114, 113, 113);
+          width: 5rem;
+          height: 100%;
+          display: grid;
+          border: none;
+          place-items: center;
+          cursor: pointer;
+        }
+        .left_btn {
+          border-right: 1px solid white;
+        }
+        .active {
+          background-color: var(--active);
+        }
+        .icon {
+          font-size: 2rem;
+        }
+      }
+      .menu {
+        width: 4rem;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        color: var(--headertxt);
+        .icon {
+          font-size: 3rem;
+        }
       }
     }
   }

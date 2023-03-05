@@ -12,6 +12,7 @@
   gap: 0.3rem;
   border-radius: 0.5rem;
   transition: all 350ms linear;
+  color: var(--text);
   &:hover {
     -webkit-box-shadow: 0px 3px 0px 3px var(--active);
     -moz-box-shadow: 0px 3px 0px 3px var(--active);

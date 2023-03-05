@@ -5,12 +5,13 @@
   border-radius: 0.5rem;
   overflow: hidden;
   background-color: var(--primary);
+  color: var(--text);
   .list_item {
     display: flex;
     justify-content: space-between;
     padding: 1rem var(--listPadding);
     background-color: var(--tertiary);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.15rem;
     &:last-child {
       border-bottom: none;
     }

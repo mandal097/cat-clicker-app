@@ -1,5 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import catReducer from "./catReducer";
+import themeReducer from "./themeReducer";
 
 import {
     persistStore,
@@ -22,6 +23,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     catReducer: catReducer,
+    themeReducer:themeReducer
 
 });
 
