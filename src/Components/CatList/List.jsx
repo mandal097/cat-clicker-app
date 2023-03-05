@@ -18,7 +18,11 @@ const ListItem = ({ catDetails, setShow }) => {
 
     const handleClick = () => {
         dispatch(setCurrentCat(catDetails));
-        setShow(false)
+        window.scroll({
+            top: "6rem",
+            behavior: "auto"
+        })
+        setShow(false);
     }
 
     return (

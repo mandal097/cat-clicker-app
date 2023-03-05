@@ -40,7 +40,7 @@ const Header = () => {
         <>
             <header>
                 <div className={styles.header}>
-                    <div className={styles.app_logo}>
+                    <div className={styles.app_logo} onClick={()=>window.scroll({top:"6rem",behavior:"auto"})}>
                         <h1>cat clicker app</h1>
                     </div>
                     <div className={styles.tools}>

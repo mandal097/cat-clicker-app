@@ -8,7 +8,7 @@ const GalleryCard = ({ catDetails }) => {
 
   const scroll = () => {
     const target = document.getElementById("view")
-    target && target.scrollIntoView({ top: 0, behavior: "auto" })
+    target && target.scrollIntoView({ top:10, behavior: "auto" })
   }
 
   const handleClick = () => {
