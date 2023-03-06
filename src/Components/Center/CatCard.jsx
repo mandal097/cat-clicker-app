@@ -4,11 +4,6 @@ import styles from './CatCard.module.scss';
 import { incrementCount, setCurrentCat } from '../../redux/catReducer';
 import axios from '../../config/axios';
 
-const Span = ({ prop }) => {
-    return (
-        <span>{" "}{prop}{" "}</span>
-    )
-}
 
 const CatCard = () => {
     const { currentCat } = useSelector(state => state.catReducer);
@@ -30,6 +25,24 @@ const CatCard = () => {
         dispatch(setCurrentCat(currentCat));
     }
 
+    const getAge = (param) => {
+        let age;
+        if ((param >= 0 && param <= 5)) {
+            age = "Infant"
+        } else if ((param >= 6 && param <= 12)) {
+            age = "Child"
+        } else if ((param >= 13 && param <= 25)) {
+            age = "Young"
+        } else if ((param >= 26 && param <= 40)) {
+            age = "Middle-Age"
+        } else if ((param >= 41 && param <= 60)) {
+            age = "Old"
+        }  else if (param >60) {
+            age = "Very Old"
+        }
+        return age;
+    }
+
     return (
         <div className={styles.cat_card}>
             <h2>{currentCat?.catName}</h2>
@@ -40,13 +53,13 @@ const CatCard = () => {
             <div className={styles.nick_names}>
                 <div>Nick name :
                     {
-                        currentCat?.nickNames?.map(ele => (
-                            <Span key={ele.id}>{" "}{ele}{" "}</Span>
+                        currentCat?.nickNames?.map((ele, idx) => (
+                            <span key={idx}>{" "}{ele}{" "}</span>
                         ))
                     }
                 </div>
             </div>
-            <p>Age : <span>Grown up baby</span></p>
+            <p>Age category : <span>{getAge(currentCat?.clicks)}</span></p>
         </div>
     )
 }

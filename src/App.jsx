@@ -2,7 +2,7 @@ import React from 'react'
 import View from './Views/View'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-// import CatCard from './Components/Center/CatCard'
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const theme = useSelector(state => state.themeReducer.currentTheme)

@@ -13,6 +13,7 @@
   border-radius: 0.5rem;
   transition: all 350ms linear;
   color: var(--text);
+  scale: 0.96;
   &:hover {
     -webkit-box-shadow: 0px 3px 0px 3px var(--active);
     -moz-box-shadow: 0px 3px 0px 3px var(--active);
@@ -68,5 +69,13 @@
     &:hover {
       color: rgb(15, 167, 228);
     }
+  }
+}
+
+.active{
+  background-color: var(--primary);
+  scale: 1.03;
+  &:hover{
+    scale: 1.025;
   }
 }

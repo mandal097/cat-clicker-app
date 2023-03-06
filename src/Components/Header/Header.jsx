@@ -4,7 +4,9 @@ import { setCurrentTheme } from '../../redux/themeReducer';
 import styles from './Header.module.scss';
 import { BsSunFill, BsMoonStarsFill } from 'react-icons/bs';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { FaCat } from 'react-icons/fa';
 import List from '../CatList/List';
+
 
 const Header = () => {
     const theme = useSelector(state => state.themeReducer.currentTheme)
@@ -41,6 +43,7 @@ const Header = () => {
             <header>
                 <div className={styles.header}>
                     <div className={styles.app_logo} onClick={()=>window.scroll({top:"6rem",behavior:"auto"})}>
+                       <FaCat className={styles.icon}/>
                         <h1>cat clicker app</h1>
                     </div>
                     <div className={styles.tools}>

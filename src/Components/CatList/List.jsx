@@ -37,6 +37,7 @@ const ListItem = ({ catDetails, setShow }) => {
             top: "6rem",
             behavior: "auto"
         })
+        setShow(false)
     }
 
     return (

@@ -9,6 +9,10 @@
   top: 6.3rem;
   background-color: var(--tertiary);
   color: var(--text);
+  .loader {
+    font-size: 2.5rem;
+    color: var(-text);
+  }
   button {
     padding: 0.7rem 1.5rem;
     font-size: 1.4rem;
@@ -19,32 +23,96 @@
   }
   .top {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
     gap: 0.4rem;
-    button {
-      background-color: rgba(47, 47, 233, 0.938);
-      width: fit-content;
-      &:hover {
-        background-color: rgba(8, 8, 201, 0.904);
+    border-radius: 0.5rem;
+    .update_fields {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      button {
+        background-color: transparent;
+        min-width: 8rem;
+        background-color: var(--active);
+        &:hover {
+          background-color: var(--primary);
+        }
+      }
+      span {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--text);
+      }
+      p {
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        font-weight: 500;
       }
     }
-    span {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-    p {
-      font-size: 1.3rem;
-      text-transform: uppercase;
-      font-weight: 500;
+    .delete_options {
+      display: flex;
+      align-items: center;
+      height: auto;
+      .text {
+        font-size: 1.3rem;
+        color: var(--textSoft);
+        margin-right: auto;
+        text-transform: capitalize;
+      }
+      .delete_btn {
+        margin-left: 1rem;
+        background-color: var(--primary);
+        text-transform: capitalize;
+        &:hover {
+          background-color: gray;
+        }
+        &:last-child {
+          background-color: rgb(233, 4, 119);
+          &:hover {
+            background-color: rgb(245, 40, 142);
+          }
+        }
+      }
     }
   }
-
   .form_body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    .form_head {
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      h2 {
+        font-size: 1.7rem;
+        color: var(--text);
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      .back {
+        position: absolute;
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: -1rem;
+        left: -1rem;
+        cursor: pointer;
+        &:hover {
+          .icon {
+            color: var(--active);
+          }
+        }
+        .icon {
+          font-size: 2.5rem;
+          color: var(--text);
+        }
+      }
+    }
     .input_field {
       display: flex;
       flex-direction: column;
