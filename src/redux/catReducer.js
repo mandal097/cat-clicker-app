@@ -17,11 +17,28 @@ const catSlice = createSlice({
         },
         setCatList: (state, action) => {
             state.catList = action.payload;
+        },
+        incrementCount: (state, action) => {
+            state.catList.map((list) => {
+                if (list._id === action.payload) {
+                    list.clicks += 1
+                    state.currentCat = list;
+                }
+                return 0;
+            })
+        },
+        incCurrentCount: (state) => {
+           console.log('k');
         }
     }
 });
 
 
-export const { setCurrentCat, setInitialCat, setCatList } = catSlice.actions;
+export const { setCurrentCat,
+    setInitialCat,
+    setCatList,
+    incCurrentCount,
+    incrementCount
+} = catSlice.actions;
 
 export default catSlice.reducer;

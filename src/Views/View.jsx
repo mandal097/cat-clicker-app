@@ -1,26 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import List from '../Components/CatList/List';
 import GalleryCard from '../Components/GalleryCard/GalleryCard';
 import styles from './View.module.scss';
 import CatCard from '../Components/Center/CatCard'
 import Form from '../Components/Form/Form'
 import Header from '../Components/Header/Header';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCatList, setInitialCat } from '../redux/catReducer';
+import axios from '../config/axios';
 
 
 const View = () => {
-    const [data, setData] = useState([]);
     const dispatch = useDispatch();
+    const { catList } = useSelector(state => state.catReducer);
 
     useEffect(() => {
-        fetch('/db/db.json')
-            .then((res) => res.json())
-            .then((payload) => {
-                dispatch(setInitialCat(payload[0]));
-                dispatch(setCatList(payload));
-                setData(payload);
-            })
+        const fetchData = async () => {
+            const res = await axios.get('/all-list')
+            if (res.data.status === 'err') {
+                console.log('errr');
+            }
+            if (res.data.status === 'success') {
+                dispatch(setInitialCat(res.data.data[0]));
+                dispatch(setCatList(res.data.data));
+            }
+        }
+
+        fetchData()
     }, [dispatch])
     return (
         <div className={styles.view}>
@@ -45,8 +51,9 @@ const View = () => {
                     </div>
                     <div className={styles.cats_card_div}>
                         {
-                            data?.map(ele => (
+                            catList?.map(ele => (
                                 <GalleryCard
+                                key={ele._id}
                                     id={ele.id}
                                     catDetails={ele}
                                 />

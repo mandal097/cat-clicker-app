@@ -11,15 +11,19 @@ const Form = () => {
             </div>
             <div className={styles.form_body}>
                 <div className={styles.input_field}>
-                    <label>Cat name</label>
+                    <label>Cat name :</label>
                     <input type="text"  placeholder='your cat name...' />
                 </div>
                 <div className={styles.input_field}>
-                    <label>Cat Image</label>
+                    <label>Cat Image :</label>
                     <input type="text" placeholder='your cat image...' />
                 </div>
                 <div className={styles.input_field}>
-                    <label>Cat Clicks</label>
+                    <label>Nick names :</label>
+                    <input type="text" placeholder='nick names of cat..' />
+                </div>
+                <div className={styles.input_field}>
+                    <label>Cat Clicks :</label>
                     <input type="text" placeholder='e.g.,5' />
                 </div>
                 <div className={styles.form_action}>
