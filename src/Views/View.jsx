@@ -13,6 +13,7 @@ import axios from '../config/axios';
 const View = () => {
     const dispatch = useDispatch();
     const { catList } = useSelector(state => state.catReducer);
+    const { currentCat } = useSelector(state => state.catReducer)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -28,6 +29,11 @@ const View = () => {
 
         fetchData()
     }, [dispatch])
+
+
+    useEffect(() => {
+        document.title = `Cat clicker app -${currentCat?.catName}`
+    }, [currentCat])
     return (
         <div className={styles.view}>
             <Header />
@@ -53,7 +59,7 @@ const View = () => {
                         {
                             catList?.map(ele => (
                                 <GalleryCard
-                                key={ele._id}
+                                    key={ele._id}
                                     id={ele.id}
                                     catDetails={ele}
                                 />
